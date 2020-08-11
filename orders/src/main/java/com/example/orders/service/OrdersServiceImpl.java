@@ -5,8 +5,8 @@ import com.example.orders.exceptions.NotFoundException;
 import com.example.orders.repository.OrdersRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class OrdersServiceImpl implements OrdersService {
@@ -26,8 +26,10 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     @Override
-    public Set<Order> getOrders() {
-        return (Set<Order>) ordersRepository.findAll();
+    public ArrayList<Order> getOrders() {
+        ArrayList<Order> resultSet = new ArrayList<>();
+        ordersRepository.findAll().iterator().forEachRemaining(resultSet::add);
+        return resultSet;
     }
 
     @Override

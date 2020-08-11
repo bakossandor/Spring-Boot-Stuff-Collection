@@ -23,6 +23,12 @@ public class OrdersController {
         return "order";
     }
 
+    @RequestMapping("/orders")
+    public String getOrders(Model model) {
+        model.addAttribute("orders", ordersService.getOrders());
+        return "orders";
+    }
+
     @ExceptionHandler(NotFoundException.class)
     public ModelAndView notFoundHandler(Exception exception) {
         ModelAndView modelAndView = new ModelAndView();

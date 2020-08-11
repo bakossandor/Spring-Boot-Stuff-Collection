@@ -2,11 +2,11 @@ package com.example.orders.service;
 
 import com.example.orders.domain.Order;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public interface OrdersService {
     Order findById(Long id);
-    Set<Order> getOrders();
+    ArrayList<Order> getOrders();
     void insert(Order order);
     void deleteById(Long id);
 }

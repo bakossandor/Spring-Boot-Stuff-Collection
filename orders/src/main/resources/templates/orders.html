@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Firts MVC</h2>
+    <h3>Here is the order</h3>
+    <p th:each="order : ${orders}">
+        <span>Order Status: </span><span th:text="${order.getOrderStatus()}"></span>
+        <span>Order Date: </span><span th:text="${order.getOrder_date()}"></span>
+    </p>
+</body>
+</html>
